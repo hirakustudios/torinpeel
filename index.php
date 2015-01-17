@@ -1,3 +1,4 @@
+<?php require('classes.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,12 @@
 
 <div class="intro"></div>
 <div class="personal"></div>
-<div class="music"></div>
+<div class="music">
+	<?php
+	$spotify = new SpotifyAPI();
+	$spotify->nowPlaying();
+	?>
+</div>
 <div class="location"></div>
 <div class="technology"></div>
 <div class="social"></div>

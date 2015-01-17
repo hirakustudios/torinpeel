@@ -14,7 +14,7 @@ class LastFMAPI {
 		echo '</pre>';
 	}
 	public function topArtists($amount) {
-		$this->top_artists = getJSON('user.getTopArtists', $amount);
+		$this->top_artists = $this->getJSON('user.getTopArtists', $amount);
 		echo '<pre>';
 		print_r($this->top_artists);
 		echo '</pre>';

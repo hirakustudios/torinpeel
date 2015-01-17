@@ -20,7 +20,7 @@ class LastFMAPI {
 		echo '</pre>';
 	}
 	public function getJSON($method, $limit) {
-		$this->url = 'http://ws.audioscrobbler.com/2.0/?method='.$this->method.'&user='.$this->user.'&api_key='.$this->api_key;
+		$this->url = 'http://ws.audioscrobbler.com/2.0/?method='.$method.'&user='.$this->user.'&api_key='.$this->api_key;
 		if (isset($limit)) $this->url .= '&limit='.$limit;
 		$this->json = file_get_contents($this->url);
 		$this->output = json_decode($this->json);

@@ -20,8 +20,8 @@
 <div class="personal"></div>
 <div class="music">
 	<?php
-	$spotify = new SpotifyAPI();
-	$spotify->nowPlaying();
+	$lastfm = new LastFMAPI('4086b09d300efcbda3db72a022559a49', 'itstorin');
+	$lastfm->topArtists(3);
 	?>
 </div>
 <div class="location"></div>

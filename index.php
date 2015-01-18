@@ -19,10 +19,11 @@
 <div class="intro"></div>
 <div class="personal"></div>
 <div class="music">
-	<?php
+<?php
 	$lastfm = new LastFMAPI('4086b09d300efcbda3db72a022559a49', 'itstorin');
-	$lastfm->topArtists(3);
-	?>
+	echo $lastfm->topArtists(3);
+	echo $lastfm->recentTrack();
+?>
 </div>
 <div class="location"></div>
 <div class="technology"></div>

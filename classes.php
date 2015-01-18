@@ -10,7 +10,7 @@ class LastFMAPI {
 	}
 	public function lastTrack() {
 		$last_track = $this->getJSON('user.getRecentTracks', 1);
-		return $last_track['recenttracks'][0];
+		return json_decode($last_track['recenttracks'][0], true);
 	}
 	public function nowPlaying() {
 		$last_track = $this->lastTrack();
@@ -41,7 +41,7 @@ class LastFMAPI {
 		$this->url = 'http://ws.audioscrobbler.com/2.0/?method='.$method.'&user='.$this->user.'&format=json&api_key='.$this->api_key;
 		if (isset($limit)) $this->url .= '&limit='.$limit;
 		$this->json = file_get_contents($this->url);
-		$this->output = json_decode($this->json);
+		$this->output = json_decode($this->json, true);
 		return $this->output;
 	}
 }

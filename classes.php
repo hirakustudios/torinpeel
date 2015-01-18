@@ -14,7 +14,7 @@ class LastFMAPI {
 	}
 	public function nowPlaying() {
 		$last_track = $this->lastTrack();
-		if (isset($last_track['@attr']['nowplaying'])) && @$last_track['@attr']['nowplaying'] !== false) {
+		if (isset($last_track['@attr']['nowplaying']) && @$last_track['@attr']['nowplaying'] !== false) {
 			return true;
 		} else {
 			return false;

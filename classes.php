@@ -31,7 +31,7 @@ class LastFMAPI {
 		$top_artists = $this->getJSON('user.getTopArtists', $amount, '&period=7day');
 		$top_artists = $top_artists['topartists'];
 		$artist_names = array();
-		foreach ($artists as $artist) array_push($artist_names, $artist['name']);
+		foreach ($top_artists as $artist) array_push($artist_names, $artist['name']);
 		$last_artist = array_pop($artist_names);
 		$artist_names = implode(', ', $artist_names);
 		$artist_names .= ' and ' . $last_artist;

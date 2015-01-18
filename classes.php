@@ -1,7 +1,5 @@
 <?php
 class LastFMAPI {
-	public $url;
-	public $json;
 	public $api_key;
 	public $user;
 	public function __construct($api_key, $user) {
@@ -38,11 +36,11 @@ class LastFMAPI {
 		return $artist_names;
 	}
 	public function getJSON($method, $limit, $otherparams = '') {
-		$this->url = 'http://ws.audioscrobbler.com/2.0/?method='.$method.'&user='.$this->user.'&format=json&api_key='.$this->api_key;
-		if (isset($limit)) $this->url .= '&limit='.$limit;
-		$this->json = file_get_contents($this->url);
-		$this->output = json_decode($this->json, true);
-		return $this->output;
+		$url = 'http://ws.audioscrobbler.com/2.0/?method='.$method.'&user='.$this->user.'&format=json&api_key='.$this->api_key;
+		if (isset($limit)) $url .= '&limit='.$limit;
+		$json = file_get_contents($url);
+		$output = json_decode($this->json, true);
+		return $output;
 	}
 }
 
